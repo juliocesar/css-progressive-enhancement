@@ -1,0 +1,7 @@
+{
+  "slides":       ["welcome.html"],
+  "title":        "CSS progressive enhancement",
+  "plugins":      ["resize", "syntaxhighlighter", "iphone"],
+  "transitions":  "fade",
+  "theme":        "rain"
+}
