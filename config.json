@@ -1,7 +1,17 @@
 {
-  "slides":       ["welcome.html"],
-  "title":        "CSS progressive enhancement",
-  "plugins":      ["resize", "syntaxhighlighter", "iphone"],
-  "transitions":  "fade",
-  "theme":        "rain"
+  "plugins": [
+    "resize",
+    "syntaxhighlighter",
+    "iphone"
+  ],
+  "transitions": "fade",
+  "title": "CSS progressive enhancement",
+  "theme": "rain",
+  "slides": [
+    "welcome.html",
+    "whatis.html",
+    "howyoudoit.html",
+    "featuredetection.html",
+    "modernizr.html"
+  ]
 }

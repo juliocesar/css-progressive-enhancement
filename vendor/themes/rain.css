@@ -39,11 +39,11 @@
 	font-style: normal;
 }
 
-
 body          { 
   font-family: 'ExpresswayCondensedBookItalic';
+  letter-spacing: 1px;
   background: url(/vendor/images/rain-noise.png) repeat;
-  background: url(/vendor/images/rain-water.png) top center no-repeat, url(/vendor/images/rain-noise.png) repeat;  
+  background: url(/vendor/images/rain-water.png) top center repeat-x, url(/vendor/images/rain-noise.png) repeat;  
 }
 #stage        { display: block; margin: 0; padding: 0 2em; color: #fefeff; text-shadow: #000 2px 2px 4px }
 
@@ -53,10 +53,9 @@ body          {
 
 h1, h2, h3, b, em { font-family: 'ExpresswayCondensedSemiBoldIt' }
 
-a                 { color: #499DFF }
-ul, ol            { list-style-position: inside }
-ul                { list-style-type: disc }
-ol                { list-style-type: decimal }
-
-em            { color: #49FF50 }
-strong        { color: #FFAB49; font-weight: bold }
+ul, ol    { list-style-position: inside }
+ul        { list-style-type: disc }
+ol        { list-style-type: decimal }
+.not      { text-decoration: line-through }
+a         { color: #CAB853; text-decoration: none; border-bottom: 1px dotted #CAB853 }
+em        { font-family: 'ExpresswayCondensedSemiBoldIt' }
