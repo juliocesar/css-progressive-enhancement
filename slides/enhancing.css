@@ -1,0 +1,6 @@
+form          { padding: 1em; margin-top: 2em; background: #FFF; text-shadow: none !important; color: #000; font-family: Arial }
+form fieldset { border: 1px solid black }
+form button   { display: block; margin-top: 0.5em }
+form button,
+form input    { margin-left: 10em }
+form label    { position: absolute }

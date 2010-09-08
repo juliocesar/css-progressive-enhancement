@@ -1,7 +1,6 @@
 {
   "plugins": [
     "resize",
-    "syntaxhighlighter",
     "iphone"
   ],
   "transitions": "fade",
@@ -12,6 +11,8 @@
     "whatis.html",
     "howyoudoit.html",
     "featuredetection.html",
-    "modernizr.html"
+    "modernizr.html",
+    "boring.html",
+    "enhancing.html"
   ]
 }

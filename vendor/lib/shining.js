@@ -40,6 +40,7 @@
     help:     help,
     when:     when,
     trigger:  trigger,
+    pluginProcesses: {},
 
     // slide scripts
     scripts: {
@@ -186,7 +187,7 @@
         trigger('slideplay', [name]);
         $(this).dequeue();
       })
-      .queue(function() { Transitions[Shining.config.transitions].enter(); $(this).dequeue(); });
+      .queue(function() { Transitions[Shining.config.transitions].enter(); $(this).dequeue(); centerStage(); });
   }
 
   function loadPlugins() {
@@ -222,9 +223,7 @@
   }
 
   function centerStage() {
-    var top = ($(window).height() - $('#stage').outerHeight()) / 2;
-    if (top < 0) top = 0;
-  	$('#stage').css({ top: top });
+  	$('#stage').css({ marginTop: -($('#stage').outerHeight() / 2) });
   }
 
   function hasPendingStep() {
@@ -257,6 +256,7 @@
     $(window).trigger('resize'); // until I figure out why once won't do
     loadSlideStyle(name);
     Shining.scripts.runSlide(name);
+    if (SyntaxHighlighter) SyntaxHighlighter.highlight({gutter: false, toolbar: false});
   });
 
   when('slideloaded', function(event, name) {

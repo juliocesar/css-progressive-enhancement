@@ -1,6 +1,5 @@
 // resize.js: Shining plugin for resizing the stage's base font size depending on available screen dimensions
-
-$(window).resize(function() {
+Shining.pluginProcesses['resize'] = setInterval(function() {
   var width = $(window).width();
   if (width >= 640 && width < 800) {
     $('#stage').css({fontSize: '100%'});
@@ -12,5 +11,5 @@ $(window).resize(function() {
     $('#stage').css({fontSize: '180%'});
   } else if (width > 1280) {
     $('#stage').css({fontSize: '200%'});
-  }
-});
+  }  
+}, 500);
