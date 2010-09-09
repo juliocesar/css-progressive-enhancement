@@ -65,3 +65,7 @@ function afterCompletion(){$this.css(props.transitionDuration,_duration);if(opts
 if(opts.delay>0){setTimeout(apply,opts.delay);}
 else{apply();}});return this;};$.fn.transition.supported=!!props.transitionProperty;$.fn.transformTransition=function(opts){opts=$.extend({origin:'0 0',css:{}},opts);var css=opts.css;if($.fn.transform.supported){css[props.transform]=transform(this,opts).format();this.css(props.transformOrigin,opts.origin);}
 return this.transition(css,opts);};})(jQuery);
+
+// http://forrst.com/posts/jquery_write-X13
+(function($){$.fn.oneAtEachTime=function(method,args,after){var collection=this,index=0;(function(e){$(e)[method].apply($(e),args);var closure=arguments.callee,next=collection.get(index++);if(next){setTimeout(function(){closure(next);},(parseInt(after,10)||1000));};})(this.get(index));return collection;};function write(text,target){var spans=splitInSpans(text),hidden=$(spans).each(function(){$(this).hide();});$(target).append(hidden);$(hidden).oneAtEachTime('css',['display','inline'],30);return $(target);};function unwrite(target){var spans=$(target).find('span');spans.oneAtEachTime('css',['opacity','0'],30);setTimeout(function(){spans.remove();},spans.length*30);return $(target);}
+function splitInSpans(text){return $(text.split('')).map(function(){return'<span>'+this+'</span>';}).toArray().join('');};$.fn.write=function(text){var element=this[0];return text==false?unwrite(element):write(text,element);};})(jQuery);

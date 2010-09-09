@@ -1,0 +1,25 @@
+3,  $('h1').fadeOut().queue(function() { $(this).text(''); $(this).write('html.boxshadow'); $(this).dequeue() }).fadeIn()
+4.5,  $(':text, textarea, button').addClass('shadow')
+7,  $('h1').write(false)
+
+8,  $('h1').write('html.fontface')
+9,  $('form').addClass('fontfaced')
+11,  $('h1').write(false)
+
+13,  $('h1').write('html.borderradius')
+15, $(':text, textarea, button').addClass('radius')
+16, $('h1').write(false)
+
+18,   $('h1').write('html.cssgradients')
+19,   $(':text, textarea').addClass('gradients')
+22,   $('h1').write(false)
+
+24,    $('h1').write('html.csstransitions')
+25,   $(':text:first').focus()
+25.5, $(':text:last').focus()
+26,   $('textarea').focus()
+26.5, $('button').focus()
+28,   $('textarea').focus()
+28.5, $(':text:last').focus()
+29,   $(':text:first').focus()
+30.5,   $(':text:first').blur()
