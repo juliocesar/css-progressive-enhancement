@@ -38,9 +38,11 @@
     previousSlide:  function() { trigger('previousslide'); },
     playSlide:      playSlide,
     help:     help,
+    note:     note,
     when:     when,
     trigger:  trigger,
     pluginProcesses: {},
+    centerStage: centerStage,
 
     // slide scripts
     scripts: {
@@ -105,16 +107,26 @@
 
   function help(message, duration, force) {
     if (Shining.config.help == false && force != true) return false;
-    var duration = duration || 500;
     $('#help').remove();
     return $('<div id="help"></div>')
       .html(message)
       .appendTo('body')
       .animate({opacity: 1})
-      .delay(duration)
-      .fadeOut(200, function() { $('#help').remove(); })
+      .delay(duration || 500)
+      .fadeOut(200, function() { $('#help').remove(); });
   }
-
+  
+  function note(message, duration) {
+    if (message == false) return $('#note').slideUp(200, function() { $(this).remove(); });
+    $('#note').remove();
+    return $('<aside id="note"></div>')
+      .html(message)
+      .appendTo('body')
+      .slideDown()
+      .delay(parseInt(duration, 10) || 500)
+      .slideUp(200, function() { $(this).remove(); });
+  }
+  
   function trigger(name, data)  { $(document).trigger(name + '.shining', data); }
   function when(name, method)   { $(document).bind(name + '.shining', method); }
 
@@ -252,14 +264,17 @@
   });
 
   when('slideplay', function(event, name) {
+    note(false);
     $(window).trigger('resize');
     $(window).trigger('resize'); // until I figure out why once won't do
     loadSlideStyle(name);
     Shining.scripts.runSlide(name);
     if (SyntaxHighlighter) SyntaxHighlighter.highlight({gutter: false, toolbar: false});
+    if ($('#stage aside').length) setTimeout(function() { note($('#stage aside').html(), 5000) }, 500);
   });
 
   when('slideloaded', function(event, name) {
+    $('#pre-stage').html(Shining.slides._loaded[name].markup);
     help('Loaded ' + Shining.slides.totalLoaded() + '/' + Shining.slides._slides.length, 5000);
     if (Shining.slides.totalLoaded() == Shining.config.slides.length) trigger('slidesloaded');
   })
@@ -291,7 +306,7 @@
       loadConfig(function() {
         loadPlugins();
         var startAt = document.location.hash.replace('#', ''), first = startAt || Shining.slides.current();
-        loadSlide(first, function() { playSlide(first); preloadSlides(); });
+        loadSlide(first, function() { playSlide(first); preloadSlides(); setTimeout(centerStage, 500); });
         setTitle(Shining.config.title);
         setTheme(Shining.config.theme);
       });
