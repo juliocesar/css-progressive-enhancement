@@ -117,7 +117,7 @@
   }
   
   function note(message, duration) {
-    if (message == false) return $('#note').slideUp(200, function() { $(this).remove(); });
+    if (message == false) return $('#note').dequeue();
     $('#note').remove();
     return $('<aside id="note"></div>')
       .html(message)

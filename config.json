@@ -4,8 +4,8 @@
     "iphone"
   ],
   "transitions": "fade",
-  "theme": "rain",
   "title": "CSS progressive enhancement",
+  "theme": "rain",
   "slides": [
     "welcome.html",
     "whatis.html",
@@ -14,6 +14,11 @@
     "modernizr.html",
     "sonow.html",
     "enhancing.html",
-    "but.html"
+    "but.html",
+    "human.html",
+    "mediaqueries.html",
+    "example.html",
+    "questions.html",
+    "thanks.html"
   ]
 }
