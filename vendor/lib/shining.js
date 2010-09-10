@@ -122,9 +122,9 @@
     return $('<aside id="note"></div>')
       .html(message)
       .appendTo('body')
-      .slideDown()
+      .animate({marginBottom: 0, opacity: 'toggle'})
       .delay(parseInt(duration, 10) || 500)
-      .slideUp(200, function() { $(this).remove(); });
+      .animate({marginBottom: 10, opacity: 'toggle'});
   }
   
   function trigger(name, data)  { $(document).trigger(name + '.shining', data); }
