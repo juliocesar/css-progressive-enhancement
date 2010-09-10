@@ -274,7 +274,6 @@
   });
 
   when('slideloaded', function(event, name) {
-    $('#pre-stage').html(Shining.slides._loaded[name].markup);
     help('Loaded ' + Shining.slides.totalLoaded() + '/' + Shining.slides._slides.length, 5000);
     if (Shining.slides.totalLoaded() == Shining.config.slides.length) trigger('slidesloaded');
   })

@@ -1,4 +1,4 @@
-3,  $('h1').fadeOut().queue(function() { $(this).text(''); $(this).write('html.boxshadow'); $(this).dequeue() }).fadeIn()
+3,  $('h1').fadeOut().queue(function() { $(this).html(''); $(this).write('html.boxshadow'); $(this).dequeue() }).fadeIn()
 4.5,  $(':text, textarea, button').addClass('shadow')
 7,  $('h1').write(false)
 
@@ -8,7 +8,7 @@
 
 13,  $('h1').write('html.borderradius')
 15, $(':text, textarea, button').addClass('radius')
-16, $('h1').write(false)
+16, $('h1').write(false); console.log('16')
 
 18,   $('h1').write('html.cssgradients')
 19,   $(':text, textarea').addClass('gradients')
