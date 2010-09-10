@@ -5,11 +5,11 @@ Shining.pluginProcesses['resize'] = setInterval(function() {
     $('#stage').css({fontSize: '100%'});
   } else if (width >= 800 && width < 1024) {
     $('#stage').css({fontSize: '130%'});
-  } else if (width >= 1024 && width < 800) {
+  } else if (width >= 1024 && width < 1280) {
     $('#stage').css({fontSize: '160%'});
-  } else if (width >= 1280 & width < 1024) {
+  } else if (width >= 1280 && width < 1440) {
     $('#stage').css({fontSize: '180%'});
-  } else if (width > 1280) {
+  } else if (width > 1440) {
     $('#stage').css({fontSize: '200%'});
   }  
 }, 500);

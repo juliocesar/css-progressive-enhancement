@@ -196,6 +196,7 @@
         var slide = Shining.slides._loaded[name];
         Shining.slides.current(name);
         $('#stage .contents').html(slide.markup);
+        setTimeout(centerStage, 500);
         trigger('slideplay', [name]);
         $(this).dequeue();
       })
