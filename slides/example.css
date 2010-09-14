@@ -1,1 +1,6 @@
 #awesome-desktop { margin-right: 2em }
+
+@media all and (max-width: 800px) {
+  #awesome-ipad     { width: 186px; height: 239px }
+  #awesome-desktop  { width: 425px; height: 239px };
+}

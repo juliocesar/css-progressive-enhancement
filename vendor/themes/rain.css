@@ -50,6 +50,8 @@ body          {
 /* override centered */
 #stage h1, h2, h3 { text-align: left; margin: 0 }
 #stage p          { text-align: left; margin: 0 }
+p, li             { font-size: 1.8em }
+small             { font-size: 1.3em }
 
 h1, h2, h3, b, em { font-family: 'ExpresswayCondensedSemiBoldIt' }
 
