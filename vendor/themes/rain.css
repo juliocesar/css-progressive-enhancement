@@ -45,7 +45,7 @@ body          {
   background: url(/vendor/images/rain-noise.png) repeat;
   background: url(/vendor/images/rain-water.png) top center repeat-x, url(/vendor/images/rain-noise.png) repeat;  
 }
-#stage        { display: block; margin: 0; padding: 0 2em; color: #fefeff; text-shadow: #000 2px 2px 4px }
+#stage        { display: block !important; margin: 0; padding: 0 2em; color: #fefeff; text-shadow: #000 2px 2px 4px }
 
 /* override centered */
 #stage h1, h2, h3 { text-align: left; margin: 0 }
