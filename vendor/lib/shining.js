@@ -36,6 +36,7 @@
     lastSlide:      function() { playSlide(Shining.slides.last()); },
     nextSlide:      function() { trigger('nextslide'); },
     previousSlide:  function() { trigger('previousslide'); },
+    setTheme:       setTheme,
     playSlide:      playSlide,
     help:     help,
     note:     note,
